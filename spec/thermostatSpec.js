@@ -18,4 +18,8 @@ describe("Thermostat", function(){
     thermostat.temp_down(10);
     expect(thermostat.temperature).toEqual(10);
   })
+  it("Minimum temperature is 10 degrees", function(){
+    thermostat.temp_down(11);
+    expect(function() {thermostat.temperature).toThrowError(Error)}
+  })
 });
