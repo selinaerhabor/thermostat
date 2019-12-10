@@ -1,4 +1,4 @@
-// const minTemp = 10;
+"use_strict";
 
 class Thermostat {
   constructor(){
@@ -22,13 +22,17 @@ class Thermostat {
   temp_down(temp) {
     this.temperature -= temp;
     if (this.temperature < this.minTemp) {
-        this.temperature = this.minTemp
-        return "The temperature cannot be lower than 10 degrees! The temperature will now be at the lowest temperature of 10 degrees.";
+      this.temperature = this.minTemp
+      return "The temperature cannot be lower than 10 degrees! The temperature will now be at the lowest temperature of 10 degrees.";
     }
     return `The temperature is now ${this.temperature} degrees.`;
   }
   power_saving_off() {
     this.power_saving = false;
     this.maxTemp = 32;
+  }
+  reset() {
+    this.temperature = 20;
+    return "The temperature has now been reset to 20 degrees"
   }
 }
