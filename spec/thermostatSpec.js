@@ -55,7 +55,7 @@ describe("Thermostat", function(){
 
   it("Prints the thermostat's current energy usage", function(){
     thermostat.temp_down(3)
-    expect(thermostat.energyUsage()).toMatch("low-usage");
+    expect(thermostat.energyUsage()).toEqual("low-usage");
   });
 
 });
