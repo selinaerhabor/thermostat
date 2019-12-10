@@ -5,6 +5,7 @@ class Thermostat {
     this.temperature = 20;
     this.minTemp = 10;
     this.power_saving_mode = true;
+    this.max_temp = 25;
   }
   temp_up(temp) {
     this.temperature += temp;
