@@ -1,4 +1,7 @@
+'use strict';
+
 describe("Thermostat", function(){
+
   var thermostat;
 
 //Before each it block reload a new instance
@@ -14,12 +17,15 @@ describe("Thermostat", function(){
     thermostat.temp_up(5);
     expect(thermostat.temperature).toEqual(25);
   });
+
   it("Thermostat temperature decreases", function(){
     thermostat.temp_down(10);
     expect(thermostat.temperature).toEqual(10);
-  })
-  it("Minimum temperature is 10 degrees", function(){
+  });
+
+  it("thermostat temperature does not go below 10 degrees", function(){
     thermostat.temp_down(11);
-    expect(function() {thermostat.temperature).toThrowError(Error)}
-  })
+    expect(thermostat.temperature).toEqual(10);
+  });
+
 });
